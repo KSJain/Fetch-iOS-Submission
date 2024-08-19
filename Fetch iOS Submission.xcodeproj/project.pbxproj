@@ -11,6 +11,8 @@
 		6CB4BDCC2C727E520036293E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDCB2C727E520036293E /* ContentView.swift */; };
 		6CB4BDCE2C727E530036293E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB4BDCD2C727E530036293E /* Assets.xcassets */; };
 		6CB4BDD22C727E530036293E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB4BDD12C727E530036293E /* Preview Assets.xcassets */; };
+		6CB4BDDA2C72B38B0036293E /* MealAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDD92C72B38B0036293E /* MealAPIService.swift */; };
+		6CB4BDDD2C72B5850036293E /* MealDBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDDC2C72B5850036293E /* MealDBModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		6CB4BDCD2C727E530036293E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CB4BDCF2C727E530036293E /* Fetch_iOS_Submission.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetch_iOS_Submission.entitlements; sourceTree = "<group>"; };
 		6CB4BDD12C727E530036293E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6CB4BDD92C72B38B0036293E /* MealAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealAPIService.swift; sourceTree = "<group>"; };
+		6CB4BDDC2C72B5850036293E /* MealDBModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDBModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 		6CB4BDC82C727E520036293E /* Fetch iOS Submission */ = {
 			isa = PBXGroup;
 			children = (
+				6CB4BDDB2C72B55D0036293E /* Models */,
+				6CB4BDD82C72B2D10036293E /* Services */,
 				6CB4BDC92C727E520036293E /* Fetch_iOS_SubmissionApp.swift */,
 				6CB4BDCB2C727E520036293E /* ContentView.swift */,
 				6CB4BDCD2C727E530036293E /* Assets.xcassets */,
@@ -67,6 +73,22 @@
 				6CB4BDD12C727E530036293E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6CB4BDD82C72B2D10036293E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6CB4BDD92C72B38B0036293E /* MealAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6CB4BDDB2C72B55D0036293E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6CB4BDDC2C72B5850036293E /* MealDBModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +161,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CB4BDDA2C72B38B0036293E /* MealAPIService.swift in Sources */,
 				6CB4BDCC2C727E520036293E /* ContentView.swift in Sources */,
+				6CB4BDDD2C72B5850036293E /* MealDBModels.swift in Sources */,
 				6CB4BDCA2C727E520036293E /* Fetch_iOS_SubmissionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
