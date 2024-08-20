@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6CB4BDCA2C727E520036293E /* Fetch_iOS_SubmissionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDC92C727E520036293E /* Fetch_iOS_SubmissionApp.swift */; };
-		6CB4BDCC2C727E520036293E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDCB2C727E520036293E /* ContentView.swift */; };
 		6CB4BDCE2C727E530036293E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB4BDCD2C727E530036293E /* Assets.xcassets */; };
 		6CB4BDD22C727E530036293E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB4BDD12C727E530036293E /* Preview Assets.xcassets */; };
 		6CB4BDDA2C72B38B0036293E /* MealAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDD92C72B38B0036293E /* MealAPIService.swift */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		6CB4BDC62C727E520036293E /* Fetch iOS Submission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch iOS Submission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB4BDC92C727E520036293E /* Fetch_iOS_SubmissionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_iOS_SubmissionApp.swift; sourceTree = "<group>"; };
-		6CB4BDCB2C727E520036293E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6CB4BDCD2C727E530036293E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CB4BDCF2C727E530036293E /* Fetch_iOS_Submission.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetch_iOS_Submission.entitlements; sourceTree = "<group>"; };
 		6CB4BDD12C727E530036293E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				6CB4BDFA2C74092B0036293E /* Screens */,
 				6CB4BDDE2C72D5440036293E /* NetworkLayer */,
 				6CB4BDDB2C72B55D0036293E /* Models */,
-				6CB4BDCB2C727E520036293E /* ContentView.swift */,
 				6CB4BDCD2C727E530036293E /* Assets.xcassets */,
 				6CB4BDCF2C727E530036293E /* Fetch_iOS_Submission.entitlements */,
 				6CB4BDD02C727E530036293E /* Preview Content */,
@@ -282,7 +279,6 @@
 				6CB4BDF92C7400C60036293E /* BaseUrl.swift in Sources */,
 				6CB4BDF72C73F7310036293E /* String+EXT.swift in Sources */,
 				6CB4BE0A2C740E320036293E /* DashboardScreenView.swift in Sources */,
-				6CB4BDCC2C727E520036293E /* ContentView.swift in Sources */,
 				6CB4BE052C740CC00036293E /* ScreenBaseView.swift in Sources */,
 				6CB4BE082C740DE30036293E /* DashboardViewModel.swift in Sources */,
 				6CB4BDF42C72DC600036293E /* Factory.swift in Sources */,
