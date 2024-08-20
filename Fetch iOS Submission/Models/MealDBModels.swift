@@ -69,6 +69,38 @@ struct MealRecipe: Identifiable {
     let strImageSource: String?
     let strCreativeCommonsConfirmed: String?
     let dateModified: String?
+    
+    init(
+        id: String?,
+        strMeal: String?,
+        strDrinkAlternate: String? = nil,
+        strCategory: String? = nil,
+        strArea: String? = nil,
+        strInstructions: String? = nil,
+        strMealThumb: String?,
+        strTags: String? = nil,
+        strYoutube: String? = nil,
+        ingredients: [RecipeIngredient] = [],
+        strSource: String? = nil,
+        strImageSource: String? = nil,
+        strCreativeCommonsConfirmed: String? = nil,
+        dateModified: String? = nil
+    ) {
+        self.id = id
+        self.strMeal = strMeal
+        self.strDrinkAlternate = strDrinkAlternate
+        self.strCategory = strCategory
+        self.strArea = strArea
+        self.strInstructions = strInstructions
+        self.strMealThumb = strMealThumb
+        self.strTags = strTags
+        self.strYoutube = strYoutube
+        self.ingredients = ingredients
+        self.strSource = strSource
+        self.strImageSource = strImageSource
+        self.strCreativeCommonsConfirmed = strCreativeCommonsConfirmed
+        self.dateModified = dateModified
+    }
 }
 
 extension MealRecipe: Equatable {
@@ -146,9 +178,36 @@ extension MealRecipe: Codable {
     }
 }
 
+extension MealRecipe {
+    var imageURL: URL? {
+        guard let strMealThumb else { return nil }
+        return URL(string: strMealThumb)
+    }
+}
+
 // Preview Dev Data
 extension MealRecipe {
     struct DevData {
+        
+        static func getMealRecipeId52772() -> MealRecipe? {
+            let data = jsonDataMealId52772.data(using: .utf8)!
+            return try? JSONDecoder().decode(MealRecipe.self, from: data)
+        }
+        
+        static func getRandomRecipeCollection() -> [MealRecipe] {
+            [
+                .init(id: "52970", strMeal: "Tunisian Orange Cake", strMealThumb: "https://www.themealdb.com/images/media/meals/y4jpgq1560459207.jpg"),
+                .init(id: "52793", strMeal: "Sticky Toffee Pudding Ultimate", strMealThumb: "https://www.themealdb.com/images/media/meals/xrptpq1483909204.jpg"),
+                .init(id: "52854", strMeal: "Pancakes", strMealThumb: "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg"),
+                .init(id: "52988", strMeal: "Classic Christmas pudding", strMealThumb: "https://www.themealdb.com/images/media/meals/1d85821576790598.jpg"),
+                .init(id: "52898", strMeal: "Chelsea Buns", strMealThumb: "https://www.themealdb.com/images/media/meals/vqpwrv1511723001.jpg"),
+                .init(id: "52791", strMeal:  "Eton Mess", strMealThumb: "https://www.themealdb.com/images/media/meals/uuxwvq1483907861.jpg")
+            ]
+        }
+        
+        
+        static let demoRecipe = MealRecipe(id: "52772", strMeal: "Teriyaki Chicken Casserole", strDrinkAlternate: nil, strCategory: nil, strArea: nil, strInstructions: nil, strMealThumb: "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg", strTags: nil, strYoutube: nil, ingredients: [], strSource: nil, strImageSource: nil, strCreativeCommonsConfirmed: nil, dateModified: nil)
+        
         static let jsonDataMealId52772 =
         """
               {
