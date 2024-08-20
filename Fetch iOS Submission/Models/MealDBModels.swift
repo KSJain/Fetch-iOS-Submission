@@ -7,35 +7,52 @@
 
 import Foundation
 
-// MARK: - Meals
-struct Meals: Decodable, Equatable {
-    let meals: [Meal]
+struct MealCategoryResponse: Codable {
+    let categories: [MealCategory]
 }
 
-// MARK: - Meal
-struct Meal: Decodable, Hashable {
-    let strMeal: String
-    let strMealThumb: String
-    let idMeal: String
-}
-
-struct MealDetails {
-    private let meals: [MealRecipe]
-    var mealRecipe: MealRecipe? {
-        meals.first
+struct MealCategory: Codable, Identifiable  {
+    let id: String?
+    let strCategory: String?
+    let strCategoryThumb: String?
+    let strCategoryDescription: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "idCategory"
+        case strCategory
+        case strCategoryThumb
+        case strCategoryDescription
     }
 }
 
-struct MealIngredient: Codable {
+struct MealIngredientsResponse: Codable {
+    let meals: [MealIngredient]
+}
+
+struct MealIngredient: Codable, Identifiable {
+    let id: String?
+    let strIngredient: String?
+    let strDescription: String?
+    let strType: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "idIngredient"
+        case strIngredient
+        case strDescription
+        case strType
+    }
+}
+
+struct MealResponse: Decodable, Equatable {
+    let meals: [MealRecipe]
+}
+
+struct RecipeIngredient: Codable {
     let name: String
     let measure: String
 }
 
-struct MealRecipe: Decodable, Equatable {
-    static func == (lhs: MealRecipe, rhs: MealRecipe) -> Bool {
-        lhs.id == rhs.id
-    }
-    
+struct MealRecipe: Identifiable {
     let id: String?
     let strMeal: String?
     let strDrinkAlternate: String?
@@ -46,7 +63,7 @@ struct MealRecipe: Decodable, Equatable {
     let strTags: String?
     let strYoutube: String?
     
-    let ingredients: [MealIngredient]
+    let ingredients: [RecipeIngredient]
     
     let strSource: String?
     let strImageSource: String?
@@ -54,25 +71,13 @@ struct MealRecipe: Decodable, Equatable {
     let dateModified: String?
 }
 
-struct MealDBAPI {
-    struct DynamicCodingKeys: CodingKey {
-        var stringValue: String
-        var intValue: Int?
-        
-        init?(stringValue: String) {
-            self.stringValue = stringValue
-            self.intValue = nil
-        }
-        
-        init?(intValue: Int) {
-            self.stringValue = "\(intValue)"
-            self.intValue = intValue
-        }
-        
+extension MealRecipe: Equatable {
+    static func == (lhs: MealRecipe, rhs: MealRecipe) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
-extension MealRecipe {
+extension MealRecipe: Codable {
     private struct DynamicCodingKeys: CodingKey {
         var stringValue: String
         var intValue: Int?
@@ -123,7 +128,7 @@ extension MealRecipe {
         strCreativeCommonsConfirmed = try container.decodeIfPresent(String.self, forKey: DynamicCodingKeys(stringValue: CodingKeys.strCreativeCommonsConfirmed.stringValue))
         dateModified = try container.decodeIfPresent(String.self, forKey: DynamicCodingKeys(stringValue: CodingKeys.dateModified.stringValue))
         
-        var ingredientz: [MealIngredient] = []
+        var ingredientz: [RecipeIngredient] = []
         
         for i in 1...20 {
             let ingredientKey = DynamicCodingKeys(stringValue: "strIngredient\(i)")
