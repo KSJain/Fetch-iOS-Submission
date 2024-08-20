@@ -27,7 +27,7 @@ final class MealAPIService: MealAPIServiceProtocol {
     func getMealsByCategory(_ category: String) async throws  -> MealResponse {
         try await MealDataAPI
             .filterByCategory(category: category)
-            .requestData(MealCategoryResponse.self, print: false)
+            .requestData(MealResponse.self, print: false)
     }
     
     func getMealsByArea(_ area: String) async throws -> MealResponse {
