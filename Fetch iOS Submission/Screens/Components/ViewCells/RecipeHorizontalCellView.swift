@@ -26,7 +26,7 @@ struct RecipeHorizontalCellView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     
-                case .failure(let error):
+                case .failure:
                     Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -59,7 +59,7 @@ struct RecipeHorizontalCellView: View {
             HStack {
                 ForEach(meals) { meal in
                     NavigationLink(
-                        destination: Text(meal.strMeal ?? "oops"),
+                        destination: RecipeCellView(recipe: meal),
                         label: {
                             RecipeHorizontalCellView(recipe: meal)
                         })

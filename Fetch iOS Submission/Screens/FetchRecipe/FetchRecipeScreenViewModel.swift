@@ -1,5 +1,5 @@
 //
-//  DashboardViewModel.swift
+//  FetchRecipeScreenViewModel.swift
 //  Fetch iOS Submission
 //
 //  Created by Kartikeya Saxena Jain on 8/19/24.
@@ -9,7 +9,7 @@ import Foundation
 
 
 @MainActor
-final class DashboardViewModel: ObservableObject {
+final class FetchRecipeScreenViewModel: ObservableObject {
     let mealAPIService: any MealAPIServiceProtocol
     
     @Published var currentRecipe: MealRecipe?

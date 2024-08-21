@@ -16,7 +16,7 @@ class ViewModelFactory: ObservableObject {
         self.mealAPIService = mealAPIService
     }
     
-    func getDashboardViewModel() -> DashboardViewModel {
-        DashboardViewModel(mealAPIService: mealAPIService)
+    func getDashboardViewModel() -> FetchRecipeScreenViewModel {
+        FetchRecipeScreenViewModel(mealAPIService: mealAPIService)
     }
 }

@@ -45,6 +45,18 @@ struct MealIngredient: Codable, Identifiable {
 
 struct MealResponse: Decodable, Equatable {
     let meals: [MealRecipe]
+    let caregory: String?
+    let area: String?
+    
+    init(
+        meals: [MealRecipe],
+        caregory: String? = nil,
+        area: String? = nil
+    ) {
+        self.meals = meals
+        self.caregory = caregory
+        self.area = area
+    }
 }
 
 struct RecipeIngredient: Codable {
