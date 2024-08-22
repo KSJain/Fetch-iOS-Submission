@@ -202,6 +202,11 @@ extension MealRecipe {
         return URL(string: strMealThumb)
     }
     
+    var recipeThumbURL: URL? {
+        guard let strMealThumb else { return nil }
+        return URL(string: strMealThumb)
+    }
+    
     var youTubeURL: URL? {
         guard let strYoutube else { return nil }
         return URL(string: strYoutube)

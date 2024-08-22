@@ -14,34 +14,19 @@ struct RecipeTileCellView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             
-            let url = URL(string: recipe?.strMealThumb ?? "url")
-            CachedAsyncImage(url: url) { imagePhase in
-                switch imagePhase {
-                case .empty:
-                    Image(systemName: "fork.knife")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    
-                case .failure:
-                    Image(systemName: "takeoutbag.and.cup.and.straw.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                    
-                @unknown default:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                }
+            CachedAsyncImage(url: recipe?.recipeThumbURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 3)
+                    .cornerRadius(20)
+                
+            } placeholder: {
+                ProgressView()
+                    .frame(height: 200)
             }
-            .frame(width: 200)
-            .cornerRadius(20)
             .padding(7)
-            .shadow(radius: 10)
+            .frame(width: 200)
             
             VStack(alignment: .leading) {
                 Text(recipe?.strMeal ?? "strMeal")
@@ -49,6 +34,7 @@ struct RecipeTileCellView: View {
                     .font(.system(size: 18, weight: .medium, design: .monospaced))
                 
                 Spacer()
+                
                 
                 VStack(alignment: .leading, spacing: 12) {
                     Text(recipe?.strCategory ?? "strCategory")
@@ -72,13 +58,20 @@ struct RecipeTileCellView: View {
             Spacer()
 
         }
+        .frame(height: 200)
         .frame(maxWidth: .infinity)
         .background(Color.white.opacity(0.6))
         .cornerRadius(20)
+        .tint(.primary)
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
     
     RecipeTileCellView(recipe: MealRecipe.DevData.demoRecipe)
+}
+
+#Preview(traits: .sizeThatFitsLayout) {
+    
+    RecipeTileCellView(recipe: MealRecipe.DevData.demoRecipeBadURL)
 }
