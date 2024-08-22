@@ -47,7 +47,6 @@ final class FetchRecipeScreenViewModelTests: XCTestCase {
         let collection = MealRecipe.DevData.getRecipeCollection()
         vm.catogorisedMeals = collection
 
-
         // WHEN
         let expectation = expectation(description: #function)
         mockService.didGetMealsByCategory = { expectation.fulfill() }
@@ -60,7 +59,7 @@ final class FetchRecipeScreenViewModelTests: XCTestCase {
         XCTAssertEqual(vm.selectedCategory, MealCategory.DevData.mealCategory)
         XCTAssertNotEqual(vm.catogorisedMeals, collection)
     }
-
+  
     @MainActor func test_getMealForCatagory_validValidCatagory_setsMealCatagories() async {
         // GIVEN
         let mockService = MockMealAPIService()
@@ -94,7 +93,7 @@ final class FetchRecipeScreenViewModelTests: XCTestCase {
         XCTAssertEqual(vm.mealCatogries, collection)
 
     }
-
+  
     @MainActor func test_setCategory_invalidCategory_setsMealCatagories() async {
         // GIVEN
         let mockService = MockMealAPIService()

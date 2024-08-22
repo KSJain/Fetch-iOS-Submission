@@ -218,6 +218,7 @@ extension MealCategory {
     struct DevData {
         static let testCatagory = MealCategory(id: "11", strCategory: "testCatagory", strCategoryThumb: nil, strCategoryDescription: nil)
         
+
         static let badCatagory = MealCategory(id: "12", strCategory: "", strCategoryThumb: nil, strCategoryDescription: nil)
         
         static let mealCategory = MealCategory(
@@ -232,6 +233,7 @@ extension MealCategory {
         static let vegan = MealCategory(id: "11", strCategory: "Vegan", strCategoryThumb: "https://www.themealdb.com/images/category/vegan.png", strCategoryDescription: nil)
         
         static let mealCategoryCollection: [MealCategory] = [ vegan, breakfast ]
+
     }
 }
 
@@ -263,6 +265,7 @@ extension MealRecipe {
                  .init(id: "4", strMeal: "four", strCategory: "testCatagory", strMealThumb: nil)
              ]
          }
+
         
         static func getRecipeCollection() -> [MealRecipe] {
             [
