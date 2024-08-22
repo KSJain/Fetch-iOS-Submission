@@ -26,49 +26,9 @@ struct FetchRecipeScreenView: View {
                     .background(.primary)
                     .padding(.bottom, 8)
                 
-                FeaturedRecipeView(viewModel: viewModel.getFeaturedRecipeViewModel())
+                FeaturedRecipeView(viewModel: viewModel.featuredRecipeViewModel)
                                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(viewModel.mealCatogries) { category in
-                            HStack {
-                                CachedAsyncImage(url: URL(string: category.strCategoryThumb ?? "")) { image in
-                                    image
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                        .scaledToFit()
-                                    
-                                } placeholder: {
-                                    Image(systemName: "fork.knife.circle")
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                        .scaledToFit()
-                                }
-
-                                Text(category.strCategory ?? "Desserts")
-                                    .font(.system(size: 18, 
-                                                  weight: viewModel.selectedCategory == category ? .bold : .light))
-                                    .lineLimit(1)
-                                    .padding(.leading, 10)
-                                    .scaledToFill()
-                            }
-                            .padding(.horizontal)
-                            .padding(.vertical, 4)
-                            .background{
-                                Capsule()
-                                    .foregroundColor(.white.opacity(0.75))
-                            }
-                            .shadow(radius: 3)
-                            .onTapGesture {
-                                viewModel.setCategory(category: category)
-                            }
-                            
-                        }
-                    }
-                }
-                .scrollIndicators(.never)
-                .padding(.bottom, 6)
-                .padding(.horizontal, 6)
+                CategorySelectorView(selectedCategory: $viewModel.selectedCategory, mealCatagories: $viewModel.mealCatogries)
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     ForEach(viewModel.catogorisedMeals) { recipe in
@@ -80,7 +40,6 @@ struct FetchRecipeScreenView: View {
                     }
                 }
             }
-
             .background(
                 LinearGradient(
                     gradient: Gradient(colors:  [
@@ -106,6 +65,6 @@ struct FetchRecipeScreenView: View {
     return FetchRecipeScreenView(viewModel: viewModel)
         .onAppear {
             viewModel.getCategories()
-            viewModel.getMealForCategory("dessert")
+            viewModel.setCategory(category: MealCategory.DevData.mealCategory)
         }
 }

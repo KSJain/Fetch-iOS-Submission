@@ -12,39 +12,47 @@ import Foundation
 final class FetchRecipeScreenViewModel: ObservableObject {
     let mealAPIService: any MealAPIServiceProtocol
     
+    @Published var featuredRecipeViewModel: FeaturedRecipeViewModel
+    
     @Published var catogorisedMeals: [MealRecipe] = []
     @Published var featuredRecipes: [MealRecipe] = []
     @Published var mealCatogries: [MealCategory] = []
-    @Published var selectedCategory: MealCategory = MealCategory.DevData.mealCategory
+    @Published var selectedCategory: MealCategory = MealCategory.DevData.mealCategory {
+        didSet {
+            getMealForCategory(selectedCategory)
+        }
+    }
     
     init(mealAPIService: any MealAPIServiceProtocol) {
         self.mealAPIService = mealAPIService
+        self.featuredRecipeViewModel = FeaturedRecipeViewModel(mealAPIService: mealAPIService)
     }
     
-    func getMealForCategory(_ categoryStr: String) {
+    func getMealForCategory(_ category: MealCategory) {
+        guard let categoryStr = category.strCategory else { return }
         Task {
             let meals = try await mealAPIService.getMealsByCategory(categoryStr)
             catogorisedMeals = meals.meals
+            updateCategories()
         }
     }
     
     func getCategories() {
         Task { [weak self] in
             guard let self else { return }
-            
-            let mealCatogries = try await self.mealAPIService.listAllCategories().categories
-            let filtered = mealCatogries.filter({$0.id != self.selectedCategory.id})
-            self.mealCatogries = [self.selectedCategory] + filtered
+            mealCatogries = try await self.mealAPIService.listAllCategories().categories
+            updateCategories()
         }
     }
     
     func setCategory(category: MealCategory) {
         selectedCategory = category
-        
-        let filtered = mealCatogries.filter({$0.id != category.id})
+        getMealForCategory(category)
+    }
+    
+    func updateCategories() {
+        let filtered = mealCatogries.filter({$0.id != selectedCategory.id})
         mealCatogries = [selectedCategory] + filtered
-        
-        getMealForCategory(category.strCategory ?? "")
     }
         
     func getDestinationViewFor(recipe: MealRecipe) -> RecipeDetailView {
@@ -52,7 +60,7 @@ final class FetchRecipeScreenViewModel: ObservableObject {
         return RecipeDetailView(viewModel: vm)
     }
     
-    func getFeaturedRecipeViewModel() -> FeaturedRecipeViewModel {
-        FeaturedRecipeViewModel(mealAPIService: mealAPIService)
+    func getFeaturedRecipeViewModel() {
+        featuredRecipeViewModel = FeaturedRecipeViewModel(mealAPIService: mealAPIService)
     }
 }

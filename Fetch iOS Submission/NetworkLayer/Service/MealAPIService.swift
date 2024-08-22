@@ -119,7 +119,7 @@ final class MockMealAPIService: MealAPIServiceProtocol {
     }
     
     func listAllCategories() async throws -> MealCategoryResponse {
-        MealCategoryResponse(categories: [])
+        MealCategoryResponse(categories: MealCategory.DevData.mealCategoryCollection)
     }
     
     func listAllIngredients() async throws -> MealIngredientsResponse {
