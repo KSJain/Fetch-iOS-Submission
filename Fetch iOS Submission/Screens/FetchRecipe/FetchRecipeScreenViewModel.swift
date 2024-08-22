@@ -56,7 +56,8 @@ final class FetchRecipeScreenViewModel: ObservableObject {
     }
     
     func updateCategories() {
-        let filtered = mealCatogries.filter({$0.id != selectedCategory.id})
+        guard let id = selectedCategory.id else { return }
+        let filtered = mealCatogries.filter({$0.id != id})
         mealCatogries = [selectedCategory] + filtered
     }
         
