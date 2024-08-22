@@ -28,18 +28,6 @@ final class FetchRecipeScreenViewModel: ObservableObject {
         }
     }
     
-    func getFeaturedRecipes() {
-        Task {
-            var collection = [MealRecipe]()
-            for _ in 0...5 {
-                if let recipe = try await mealAPIService.getRandomMeal().meals.first {
-                    collection.append(recipe)
-                }
-            }
-            featuredRecipes = collection
-        }
-    }
-    
     func getCategories() {
         Task { [weak self] in
             guard let self else { return }
@@ -58,14 +46,13 @@ final class FetchRecipeScreenViewModel: ObservableObject {
         
         getMealForCategory(category.strCategory ?? "")
     }
-    
-    func getRecipeCollectionHorizontal() -> RecipeCollectionHorizontal {
-        let vm = RecipeCollectionHorizontalViewModel(service: mealAPIService, recipes: featuredRecipes)
-        return RecipeCollectionHorizontal(viewModel: vm)
-    }
-    
+        
     func getDestinationViewFor(recipe: MealRecipe) -> RecipeDetailView {
         let vm = RecipeDetailViewModel(recipe: recipe, service: mealAPIService)
         return RecipeDetailView(viewModel: vm)
+    }
+    
+    func getFeaturedRecipeViewModel() -> FeaturedRecipeViewModel {
+        FeaturedRecipeViewModel(mealAPIService: mealAPIService)
     }
 }

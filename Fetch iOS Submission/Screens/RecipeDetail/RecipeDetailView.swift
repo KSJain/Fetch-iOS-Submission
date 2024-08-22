@@ -18,21 +18,36 @@ struct RecipeDetailView: View {
             VStack {
                 
                 ZStack {
-                    HStack {
-                        Button(action: { dismiss() }, label: {
-                            Image(systemName: "chevron.backward")
-                                .foregroundColor(.primary)
-                        })
+                    VStack {
+                        HStack {
+                            Button(action: { dismiss() }, label: {
+                                Image(systemName: "chevron.backward")
+                                    .foregroundColor(.primary)
+                            })
+                            
+                            Spacer()
+                        }
+                        .padding()
                         
                         Spacer()
                     }
-                    .padding(.leading)
                     
-                    Text(viewModel.recipe.strMeal ?? "")
-                        .font(.system(size: 28, weight: .light))
-                        .padding(8)
-                        .lineLimit(2)
-                        .scaledToFit()
+                    VStack(spacing: 2) {
+                        Text(viewModel.recipe.strMeal ?? "")
+                            .font(.system(size: 28, weight: .light))
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 6)
+                            .lineLimit(2)
+                            .scaledToFit()
+                        
+                        if let area = viewModel.recipe.strArea {
+                            Text(area)
+                                .font(.system(size: 18, weight: .light))
+                                .lineLimit(2)
+                                .padding(.bottom)
+                                .scaledToFit()
+                        }
+                    }
                 }
                 
                 CachedAsyncImage(url: viewModel.recipe.imageURL) { image in

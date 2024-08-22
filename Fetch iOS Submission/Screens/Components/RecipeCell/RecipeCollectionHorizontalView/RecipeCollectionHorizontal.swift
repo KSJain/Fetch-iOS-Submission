@@ -11,19 +11,14 @@ final class RecipeCollectionHorizontalViewModel: ObservableObject {
     private let service: MealAPIServiceProtocol
     @Published var recipes: [MealRecipe]
     
-    init(service: MealAPIServiceProtocol, recipes: [MealRecipe]) {
-        self.service = service
+    init(mealAPIService: MealAPIServiceProtocol, recipes: [MealRecipe]) {
+        self.service = mealAPIService
         self.recipes = recipes
     }
     
-    func getLabelFor(recipe: MealRecipe) -> RecipeHorizontalCellView {
-        RecipeHorizontalCellView(recipe: recipe)
-    }
-    
-    @MainActor 
-    func getDestinationViewFor(recipe: MealRecipe) -> RecipeDetailView {
-        let vm = RecipeDetailViewModel(recipe: recipe, service: service)
-        return RecipeDetailView(viewModel: vm)
+    @MainActor
+    func getRecipeDetailViewModel(recipe: MealRecipe) -> RecipeDetailViewModel {
+        RecipeDetailViewModel(recipe: recipe, service: service)
     }
 }
 
@@ -35,11 +30,11 @@ struct RecipeCollectionHorizontal: View {
         VStack(alignment: .leading) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(viewModel.recipes) { meal in
+                    ForEach(viewModel.recipes) { recipe in
                         NavigationLink(
-                            destination: viewModel.getDestinationViewFor(recipe: meal),
+                            destination: RecipeDetailView(viewModel: viewModel.getRecipeDetailViewModel(recipe: recipe)),
                             label: {
-                                viewModel.getLabelFor(recipe: meal)
+                                RecipeHorizontalCellView(recipe: recipe)
                             })
                         
                     }
@@ -51,5 +46,5 @@ struct RecipeCollectionHorizontal: View {
 }
 
 #Preview (traits: .sizeThatFitsLayout) {
-    RecipeCollectionHorizontal(viewModel: RecipeCollectionHorizontalViewModel(service: MockMealAPIService(), recipes: MealRecipe.DevData.getRecipeCollection()))
+    RecipeCollectionHorizontal(viewModel: RecipeCollectionHorizontalViewModel(mealAPIService: MockMealAPIService(), recipes: MealRecipe.DevData.getRecipeCollection()))
 }

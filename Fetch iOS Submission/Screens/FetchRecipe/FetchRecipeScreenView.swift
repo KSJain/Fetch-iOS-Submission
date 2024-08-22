@@ -26,21 +26,8 @@ struct FetchRecipeScreenView: View {
                     .background(.primary)
                     .padding(.bottom, 8)
                 
-                HStack {
-                    Text("Featured Recipes")
-                        .padding(.leading, 4)
-                        .font(.system(size: 24, weight: .light))
-                    
-                    Button(action: {
-                        viewModel.getFeaturedRecipes()
-                    }, label: {
-                        Image(systemName: "arrow.counterclockwise.circle")
-                            .tint(.primary)
-                    })
-                }
-                
-                viewModel.getRecipeCollectionHorizontal()
-                
+                FeaturedRecipeView(viewModel: viewModel.getFeaturedRecipeViewModel())
+                                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(viewModel.mealCatogries) { category in
@@ -64,9 +51,6 @@ struct FetchRecipeScreenView: View {
                                     .lineLimit(1)
                                     .padding(.leading, 10)
                                     .scaledToFill()
-                                    .onTapGesture {
-                                        viewModel.setCategory(category: category)
-                                    }
                             }
                             .padding(.horizontal)
                             .padding(.vertical, 4)
@@ -75,6 +59,9 @@ struct FetchRecipeScreenView: View {
                                     .foregroundColor(.white.opacity(0.75))
                             }
                             .shadow(radius: 3)
+                            .onTapGesture {
+                                viewModel.setCategory(category: category)
+                            }
                             
                         }
                     }
@@ -107,7 +94,6 @@ struct FetchRecipeScreenView: View {
             )
         }
         .onAppear {
-            viewModel.getFeaturedRecipes()
             viewModel.getCategories()
             viewModel.setCategory(category: MealCategory.DevData.mealCategory)
         }
@@ -121,6 +107,5 @@ struct FetchRecipeScreenView: View {
         .onAppear {
             viewModel.getCategories()
             viewModel.getMealForCategory("dessert")
-            viewModel.getFeaturedRecipes()
         }
 }

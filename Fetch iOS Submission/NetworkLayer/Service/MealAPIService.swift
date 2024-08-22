@@ -111,7 +111,7 @@ final class MockMealAPIService: MealAPIServiceProtocol {
     }
     
     func getRandomMeal() async throws -> MealResponse {
-        MealResponse(meals: [])
+        MealResponse(meals: MealRecipe.DevData.getRecipeCollection().shuffled())
     }
     
     func listAllAreas() async throws -> MealResponse {
