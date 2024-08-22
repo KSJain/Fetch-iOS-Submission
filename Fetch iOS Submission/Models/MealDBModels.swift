@@ -217,6 +217,8 @@ extension MealRecipe {
 extension MealCategory {
     struct DevData {
         static let testCatagory = MealCategory(id: "11", strCategory: "testCatagory", strCategoryThumb: nil, strCategoryDescription: nil)
+        
+
         static let badCatagory = MealCategory(id: "12", strCategory: "", strCategoryThumb: nil, strCategoryDescription: nil)
         
         static let mealCategory = MealCategory(
@@ -227,13 +229,11 @@ extension MealCategory {
         )
         
         static let breakfast = MealCategory(id: "13", strCategory: "Breakfast", strCategoryThumb: "https://www.themealdb.com/images/category/breakfast.png", strCategoryDescription: nil)
-        
-        static let vegan = MealCategory(id: "11", strCategory: "Vegan", strCategoryThumb: "https://www.themealdb.com/images/category/vegan.png", strCategoryDescription: nil)
 
-        static let mealCategoryCollection: [MealCategory] = [
-            vegan,
-            breakfast
-        ]
+        static let vegan = MealCategory(id: "11", strCategory: "Vegan", strCategoryThumb: "https://www.themealdb.com/images/category/vegan.png", strCategoryDescription: nil)
+        
+        static let mealCategoryCollection: [MealCategory] = [ vegan, breakfast ]
+
     }
 }
 
@@ -258,13 +258,14 @@ extension MealRecipe {
     struct DevData {
         
         static func getRecipeCollectionForTestCatagory() -> [MealRecipe] {
-            [
-                .init(id: "1", strMeal: "one", strCategory: "testCatagory", strMealThumb: nil),
-                .init(id: "2", strMeal: "two", strCategory: "testCatagory", strMealThumb: nil),
-                .init(id: "3", strMeal: "three", strCategory: "testCatagory", strMealThumb: nil),
-                .init(id: "4", strMeal: "four", strCategory: "testCatagory", strMealThumb: nil)
-            ]
-        }
+             [
+                 .init(id: "1", strMeal: "one", strCategory: "testCatagory", strMealThumb: nil),
+                 .init(id: "2", strMeal: "two", strCategory: "testCatagory", strMealThumb: nil),
+                 .init(id: "3", strMeal: "three", strCategory: "testCatagory", strMealThumb: nil),
+                 .init(id: "4", strMeal: "four", strCategory: "testCatagory", strMealThumb: nil)
+             ]
+         }
+
         
         static func getRecipeCollection() -> [MealRecipe] {
             [

@@ -86,16 +86,15 @@ final class MealAPIService: MealAPIServiceProtocol {
 }
 
 final class MockMealAPIService: MealAPIServiceProtocol {
-    
     public var didGetMealsByCategory: (() -> Void)?
     func getMealsByCategory(_ category: String) async throws -> MealResponse {
         defer { didGetMealsByCategory?() }
-        if category == "testCatagory" {
-            return MealResponse(meals: MealRecipe.DevData.getRecipeCollectionForTestCatagory())
-        } else {
-            return MealResponse(meals: [])
-        }
-    }
+         if category == "testCatagory" {
+             return MealResponse(meals: MealRecipe.DevData.getRecipeCollectionForTestCatagory())
+         } else {
+             return MealResponse(meals: [])
+         }    }
+
     
     func getMealsByArea(_ area: String) async throws -> MealResponse {
         MealResponse(meals: [])
