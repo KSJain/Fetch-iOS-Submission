@@ -46,8 +46,13 @@ final class FetchRecipeScreenViewModel: ObservableObject {
     }
     
     func setCategory(category: MealCategory) {
+        guard
+            let strCategory = category.strCategory,
+            !strCategory.isEmpty
+        else { return }
         selectedCategory = category
         getMealForCategory(category)
+        updateCategories()
     }
     
     func updateCategories() {
