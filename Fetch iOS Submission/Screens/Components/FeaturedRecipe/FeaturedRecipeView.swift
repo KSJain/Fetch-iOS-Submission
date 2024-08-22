@@ -19,8 +19,13 @@ struct FeaturedRecipeView: View {
                 Button(action: {
                     viewModel.getFeaturedRecipes()
                 }, label: {
-                    Image(systemName: "arrow.counterclockwise.circle")
-                        .tint(.primary)
+                    if viewModel.recipes.isEmpty {
+                        ProgressView()
+                            .padding(.leading, 5)
+                    } else {
+                        Image(systemName: "arrow.counterclockwise.circle")
+                            .tint(.primary)
+                    }
                 })
             }
             

@@ -53,11 +53,11 @@
 		6CB4BE6D2C77E76A0036293E /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDF32C72DC600036293E /* Factory.swift */; };
 		6CB4BE6E2C77E7790036293E /* String+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDF62C73F7310036293E /* String+EXT.swift */; };
 		6CB4BE6F2C77E7850036293E /* RecipeHorizontalCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE152C7546D80036293E /* RecipeHorizontalCellView.swift */; };
+		6CB4BE712C77F9B60036293E /* RecipeTileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE702C77F9B60036293E /* RecipeTileCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		6CB4BE592C77E4FE0036293E /* PBXContainerItemProxy */ = {
-
 			isa = PBXContainerItemProxy;
 			containerPortal = 6CB4BDBE2C727E520036293E /* Project object */;
 			proxyType = 1;
@@ -99,7 +99,7 @@
 		6CB4BE552C77E4FE0036293E /* Fetch iOS SubmissionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch iOS SubmissionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB4BE572C77E4FE0036293E /* Fetch_iOS_SubmissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_iOS_SubmissionTests.swift; sourceTree = "<group>"; };
 		6CB4BE5E2C77E5370036293E /* FetchRecipeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeScreenViewModelTests.swift; sourceTree = "<group>"; };
-
+		6CB4BE702C77F9B60036293E /* RecipeTileCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTileCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6CB4BE522C77E4FE0036293E /* Frameworks */ = {
-
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,7 +126,6 @@
 			children = (
 				6CB4BDC82C727E520036293E /* Fetch iOS Submission */,
 				6CB4BE562C77E4FE0036293E /* Fetch iOS SubmissionTests */,
-
 				6CB4BDC72C727E520036293E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,7 +135,6 @@
 			children = (
 				6CB4BDC62C727E520036293E /* Fetch iOS Submission.app */,
 				6CB4BE552C77E4FE0036293E /* Fetch iOS SubmissionTests.xctest */,
-
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,10 +237,10 @@
 		6CB4BDFA2C74092B0036293E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6CB4BE1A2C7590450036293E /* RecipeDetail */,
+				6CB4BE032C740C770036293E /* Base */,
 				6CB4BE102C7545E60036293E /* Components */,
 				6CB4BE062C740DD30036293E /* FetchRecipe */,
-				6CB4BE032C740C770036293E /* Base */,
+				6CB4BE1A2C7590450036293E /* RecipeDetail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -277,10 +274,9 @@
 		6CB4BE102C7545E60036293E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6CB4BE172C758A960036293E /* Cell */,
 				6CB4BE2A2C7713930036293E /* Selector */,
 				6CB4BE242C7700B60036293E /* FeaturedRecipe */,
-				6CB4BE172C758A960036293E /* RecipeCell */,
-				6CB4BE142C7546880036293E /* RecipeHorizontal */,
 				6CB4BE112C7545ED0036293E /* NavigationBar */,
 			);
 			path = Components;
@@ -302,13 +298,14 @@
 			path = RecipeHorizontal;
 			sourceTree = "<group>";
 		};
-		6CB4BE172C758A960036293E /* RecipeCell */ = {
+		6CB4BE172C758A960036293E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6CB4BE182C758AFF0036293E /* RecipeTileCellView.swift */,
+				6CB4BE142C7546880036293E /* RecipeHorizontal */,
+				6CB4BE732C77F9DF0036293E /* RecipeTileCell */,
 				6CB4BE272C7706FF0036293E /* RecipeCollectionHorizontalView */,
 			);
-			path = RecipeCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6CB4BE1A2C7590450036293E /* RecipeDetail */ = {
@@ -333,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				6CB4BE1D2C7653240036293E /* RecipeCollectionHorizontal.swift */,
-				6CB4BE412C7791530036293E /* RecipeCollectionHorizontalViewModel.swift */,
 			);
 			path = RecipeCollectionHorizontalView;
 			sourceTree = "<group>";
@@ -351,9 +347,17 @@
 			children = (
 				6CB4BE572C77E4FE0036293E /* Fetch_iOS_SubmissionTests.swift */,
 				6CB4BE5E2C77E5370036293E /* FetchRecipeScreenViewModelTests.swift */,
-
 			);
 			path = "Fetch iOS SubmissionTests";
+			sourceTree = "<group>";
+		};
+		6CB4BE732C77F9DF0036293E /* RecipeTileCell */ = {
+			isa = PBXGroup;
+			children = (
+				6CB4BE182C758AFF0036293E /* RecipeTileCellView.swift */,
+				6CB4BE702C77F9B60036293E /* RecipeTileCellViewModel.swift */,
+			);
+			path = RecipeTileCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +390,6 @@
 				6CB4BE512C77E4FE0036293E /* Sources */,
 				6CB4BE522C77E4FE0036293E /* Frameworks */,
 				6CB4BE532C77E4FE0036293E /* Resources */,
-
 			);
 			buildRules = (
 			);
@@ -396,7 +399,6 @@
 			name = "Fetch iOS SubmissionTests";
 			productName = "Fetch iOS SubmissionTests";
 			productReference = 6CB4BE552C77E4FE0036293E /* Fetch iOS SubmissionTests.xctest */;
-
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -413,7 +415,6 @@
 						CreatedOnToolsVersion = 15.4;
 					};
 					6CB4BE542C77E4FE0036293E = {
-
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 6CB4BDC52C727E520036293E;
 					};
@@ -437,7 +438,6 @@
 			targets = (
 				6CB4BDC52C727E520036293E /* Fetch iOS Submission */,
 				6CB4BE542C77E4FE0036293E /* Fetch iOS SubmissionTests */,
-
 			);
 		};
 /* End PBXProject section */
@@ -453,7 +453,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6CB4BE532C77E4FE0036293E /* Resources */ = {
-
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CB4BE712C77F9B60036293E /* RecipeTileCellViewModel.swift in Sources */,
 				6CB4BE0F2C7542420036293E /* URLCache+EXT.swift in Sources */,
 				6CB4BE132C7545F80036293E /* FetchAppNavigationBarView.swift in Sources */,
 				6CB4BE192C758AFF0036293E /* RecipeTileCellView.swift in Sources */,
@@ -479,7 +479,6 @@
 				6CB4BE0A2C740E320036293E /* FetchRecipeScreenView.swift in Sources */,
 				6CB4BE052C740CC00036293E /* ScreenBaseView.swift in Sources */,
 				6CB4BE082C740DE30036293E /* FetchRecipeScreenViewModel.swift in Sources */,
-				6CB4BE422C7791530036293E /* RecipeCollectionHorizontalViewModel.swift in Sources */,
 				6CB4BDF42C72DC600036293E /* Factory.swift in Sources */,
 				6CB4BDEA2C72D6DD0036293E /* APIProtocol.swift in Sources */,
 				6CB4BE1C2C75906A0036293E /* RecipeDetailView.swift in Sources */,
@@ -518,7 +517,6 @@
 				6CB4BE662C77E7280036293E /* FeaturedRecipeViewModel.swift in Sources */,
 				6CB4BE672C77E7310036293E /* MealDataAPI.swift in Sources */,
 				6CB4BE6C2C77E7650036293E /* HttpStatus.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +527,6 @@
 			isa = PBXTargetDependency;
 			target = 6CB4BDC52C727E520036293E /* Fetch iOS Submission */;
 			targetProxy = 6CB4BE592C77E4FE0036293E /* PBXContainerItemProxy */;
-
 		};
 /* End PBXTargetDependency section */
 
@@ -727,7 +724,6 @@
 			name = Release;
 		};
 		6CB4BE5B2C77E4FE0036293E /* Debug */ = {
-
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -748,7 +744,6 @@
 			name = Debug;
 		};
 		6CB4BE5C2C77E4FE0036293E /* Release */ = {
-
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -795,7 +790,6 @@
 			buildConfigurations = (
 				6CB4BE5B2C77E4FE0036293E /* Debug */,
 				6CB4BE5C2C77E4FE0036293E /* Release */,
-
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

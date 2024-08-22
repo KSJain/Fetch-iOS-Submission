@@ -21,6 +21,7 @@ final class FeaturedRecipeViewModel: ObservableObject {
     func getFeaturedRecipes() {
         Task {
             var collection = [MealRecipe]()
+            recipes = []
             for _ in 0...5 {
                 if let recipe = try await mealAPIService.getRandomMeal().meals.first {
                     collection.append(recipe)

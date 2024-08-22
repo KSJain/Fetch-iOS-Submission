@@ -12,7 +12,7 @@ struct RecipeTileCellView: View {
     let recipe: MealRecipe?
     
     var body: some View {
-        HStack(alignment: .top, spacing: 0) {
+        HStack(alignment: .center, spacing: 0) {
             
             CachedAsyncImage(url: recipe?.recipeThumbURL) { image in
                 image
@@ -28,35 +28,17 @@ struct RecipeTileCellView: View {
             .padding(7)
             .frame(width: 200)
             
-            VStack(alignment: .leading) {
-                Text(recipe?.strMeal ?? "strMeal")
+            VStack(alignment: .center) {
+                Text(recipe?.strMeal ?? "")
                     .multilineTextAlignment(.leading)
-                    .font(.system(size: 18, weight: .medium, design: .monospaced))
-                
-                Spacer()
-                
-                
-                VStack(alignment: .leading, spacing: 12) {
-                    Text(recipe?.strCategory ?? "strCategory")
-                        .fontWeight(.bold)
-                    HStack {
-                        Image(systemName: "location.square")
-                        Text(recipe?.strArea ?? "strArea")
-                    }
-                    
-                    if !(recipe?.strTags.isEmpty == false) {
-                        HStack {
-                            Image(systemName: "tag.square")
-                            Text(recipe?.strTags.joined(separator: " ") ?? "")
-                        }
-                    }
-                }
+                    .lineLimit(4)
+                    .font(.system(size: 21, weight: .medium, design: .monospaced))
+                    .minimumScaleFactor(0.7)
             }
             .padding(.vertical)
             .padding(.horizontal, 6)
             
             Spacer()
-
         }
         .frame(height: 200)
         .frame(maxWidth: .infinity)
@@ -67,11 +49,9 @@ struct RecipeTileCellView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    
     RecipeTileCellView(recipe: MealRecipe.DevData.demoRecipe)
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    
     RecipeTileCellView(recipe: MealRecipe.DevData.demoRecipeBadURL)
 }

@@ -18,36 +18,38 @@ struct RecipeDetailView: View {
             VStack {
                 
                 ZStack {
-                    VStack {
-                        HStack {
-                            Button(action: { dismiss() }, label: {
-                                Image(systemName: "chevron.backward")
-                                    .foregroundColor(.primary)
-                            })
-                            
-                            Spacer()
-                        }
-                        .padding()
-                        
-                        Spacer()
-                    }
-                    
                     VStack(spacing: 2) {
                         Text(viewModel.recipe.strMeal ?? "")
                             .font(.system(size: 28, weight: .light))
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 6)
-                            .lineLimit(2)
+                            .lineLimit(3)
+                            .minimumScaleFactor(0.8)
                             .scaledToFit()
                         
                         if let area = viewModel.recipe.strArea {
                             Text(area)
                                 .font(.system(size: 18, weight: .light))
                                 .lineLimit(2)
+                                .minimumScaleFactor(0.8)
                                 .padding(.bottom)
                                 .scaledToFit()
                         }
                     }
+                    .padding(.vertical, 6)
+                    .padding(.horizontal, 14)
+                    
+                        VStack {
+                            HStack {
+                                Button(action: { dismiss() }, label: {
+                                    Image(systemName: "chevron.backward")
+                                        .foregroundColor(.primary)
+                                })
+                                
+                                Spacer()
+                            }
+                            .padding()
+                            
+                            Spacer()
+                        }
                 }
                 
                 CachedAsyncImage(url: viewModel.recipe.imageURL) { image in

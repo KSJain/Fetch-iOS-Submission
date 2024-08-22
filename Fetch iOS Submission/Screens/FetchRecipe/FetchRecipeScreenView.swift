@@ -36,16 +36,17 @@ struct FetchRecipeScreenView: View {
                             destination: viewModel.getDestinationViewFor(recipe: recipe),
                             label: {
                                 RecipeTileCellView(recipe: recipe)
-                                    .padding(.horizontal, 8)                            })
+                                    .padding(.horizontal, 8)                           
+                            })
                     }
                 }
             }
             .background(
                 LinearGradient(
                     gradient: Gradient(colors:  [
-                                            .green.opacity(0.3),
-                                            .green.opacity(0.6),
-                                            .green.opacity(0.9)
+                                            .appTheme.opacity(0.3),
+                                            .appTheme.opacity(0.6),
+                                            .appTheme.opacity(0.9)
                                         ]),
                     startPoint: .top,
                     endPoint: .bottom

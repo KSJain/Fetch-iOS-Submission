@@ -34,6 +34,7 @@ struct RecipeHorizontalCellView: View {
             Text(recipe.strMeal ?? "...")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 18, weight: .light , design: .rounded))
+                .minimumScaleFactor(0.8)
                 .foregroundColor(.primary)
                 .frame(maxHeight: 50)
 
