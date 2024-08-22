@@ -35,7 +35,35 @@
 		6CB4BE262C7700CE0036293E /* FeaturedRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE252C7700CE0036293E /* FeaturedRecipeView.swift */; };
 		6CB4BE292C770C2E0036293E /* FeaturedRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE282C770C2E0036293E /* FeaturedRecipeViewModel.swift */; };
 		6CB4BE2C2C77139F0036293E /* CategorySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE2B2C77139F0036293E /* CategorySelectorView.swift */; };
+		6CB4BE342C778CC60036293E /* Fetch_iOS_SubmissionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE332C778CC60036293E /* Fetch_iOS_SubmissionTests.swift */; };
+		6CB4BE3B2C778F000036293E /* FetchRecipeScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE3A2C778F000036293E /* FetchRecipeScreenViewModelTests.swift */; };
+		6CB4BE3C2C778F710036293E /* FetchRecipeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE072C740DE30036293E /* FetchRecipeScreenViewModel.swift */; };
+		6CB4BE3D2C778F9D0036293E /* MealAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDD92C72B38B0036293E /* MealAPIService.swift */; };
+		6CB4BE3E2C7790D70036293E /* MealDBModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDDC2C72B5850036293E /* MealDBModels.swift */; };
+		6CB4BE3F2C77911D0036293E /* FeaturedRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE282C770C2E0036293E /* FeaturedRecipeViewModel.swift */; };
+		6CB4BE422C7791530036293E /* RecipeCollectionHorizontalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE412C7791530036293E /* RecipeCollectionHorizontalViewModel.swift */; };
+		6CB4BE432C7791670036293E /* RecipeCollectionHorizontalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE412C7791530036293E /* RecipeCollectionHorizontalViewModel.swift */; };
+		6CB4BE442C7791880036293E /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE222C76F0EE0036293E /* RecipeDetailViewModel.swift */; };
+		6CB4BE452C7791980036293E /* MealDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDDF2C72D5960036293E /* MealDataAPI.swift */; };
+		6CB4BE462C7791AB0036293E /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDE92C72D6DD0036293E /* APIProtocol.swift */; };
+		6CB4BE472C7791B80036293E /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BE1B2C75906A0036293E /* RecipeDetailView.swift */; };
+		6CB4BE482C7791C60036293E /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDE32C72D63B0036293E /* HttpMethod.swift */; };
+		6CB4BE492C7791CD0036293E /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDF82C7400C60036293E /* BaseUrl.swift */; };
+		6CB4BE4A2C7791E00036293E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDEC2C72DB9D0036293E /* NetworkError.swift */; };
+		6CB4BE4B2C7791EA0036293E /* String+EXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDF62C73F7310036293E /* String+EXT.swift */; };
+		6CB4BE4C2C7791F30036293E /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDF32C72DC600036293E /* Factory.swift */; };
+		6CB4BE4D2C7791FA0036293E /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4BDEE2C72DBC30036293E /* HttpStatus.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CB4BE352C778CC60036293E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CB4BDBE2C727E520036293E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CB4BDC52C727E520036293E;
+			remoteInfo = "Fetch iOS Submission";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6CB4BDC62C727E520036293E /* Fetch iOS Submission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch iOS Submission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +95,10 @@
 		6CB4BE252C7700CE0036293E /* FeaturedRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedRecipeView.swift; sourceTree = "<group>"; };
 		6CB4BE282C770C2E0036293E /* FeaturedRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedRecipeViewModel.swift; sourceTree = "<group>"; };
 		6CB4BE2B2C77139F0036293E /* CategorySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectorView.swift; sourceTree = "<group>"; };
+		6CB4BE312C778CC60036293E /* Fetch iOS SubmissionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch iOS SubmissionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CB4BE332C778CC60036293E /* Fetch_iOS_SubmissionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_iOS_SubmissionTests.swift; sourceTree = "<group>"; };
+		6CB4BE3A2C778F000036293E /* FetchRecipeScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeScreenViewModelTests.swift; sourceTree = "<group>"; };
+		6CB4BE412C7791530036293E /* RecipeCollectionHorizontalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionHorizontalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +110,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6CB4BE2E2C778CC60036293E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB4BDC82C727E520036293E /* Fetch iOS Submission */,
+				6CB4BE322C778CC60036293E /* Fetch iOS SubmissionTests */,
 				6CB4BDC72C727E520036293E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB4BDC62C727E520036293E /* Fetch iOS Submission.app */,
+				6CB4BE312C778CC60036293E /* Fetch iOS SubmissionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				6CB4BE1D2C7653240036293E /* RecipeCollectionHorizontal.swift */,
+				6CB4BE412C7791530036293E /* RecipeCollectionHorizontalViewModel.swift */,
 			);
 			path = RecipeCollectionHorizontalView;
 			sourceTree = "<group>";
@@ -298,6 +340,15 @@
 				6CB4BE2B2C77139F0036293E /* CategorySelectorView.swift */,
 			);
 			path = Selector;
+			sourceTree = "<group>";
+		};
+		6CB4BE322C778CC60036293E /* Fetch iOS SubmissionTests */ = {
+			isa = PBXGroup;
+			children = (
+				6CB4BE332C778CC60036293E /* Fetch_iOS_SubmissionTests.swift */,
+				6CB4BE3A2C778F000036293E /* FetchRecipeScreenViewModelTests.swift */,
+			);
+			path = "Fetch iOS SubmissionTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +374,24 @@
 			productReference = 6CB4BDC62C727E520036293E /* Fetch iOS Submission.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6CB4BE302C778CC60036293E /* Fetch iOS SubmissionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CB4BE372C778CC60036293E /* Build configuration list for PBXNativeTarget "Fetch iOS SubmissionTests" */;
+			buildPhases = (
+				6CB4BE2D2C778CC60036293E /* Sources */,
+				6CB4BE2E2C778CC60036293E /* Frameworks */,
+				6CB4BE2F2C778CC60036293E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CB4BE362C778CC60036293E /* PBXTargetDependency */,
+			);
+			name = "Fetch iOS SubmissionTests";
+			productName = "Fetch iOS SubmissionTests";
+			productReference = 6CB4BE312C778CC60036293E /* Fetch iOS SubmissionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -335,6 +404,10 @@
 				TargetAttributes = {
 					6CB4BDC52C727E520036293E = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					6CB4BE302C778CC60036293E = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 6CB4BDC52C727E520036293E;
 					};
 				};
 			};
@@ -355,6 +428,7 @@
 			projectRoot = "";
 			targets = (
 				6CB4BDC52C727E520036293E /* Fetch iOS Submission */,
+				6CB4BE302C778CC60036293E /* Fetch iOS SubmissionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -366,6 +440,13 @@
 			files = (
 				6CB4BDD22C727E530036293E /* Preview Assets.xcassets in Resources */,
 				6CB4BDCE2C727E530036293E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CB4BE2F2C778CC60036293E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +469,7 @@
 				6CB4BE0A2C740E320036293E /* FetchRecipeScreenView.swift in Sources */,
 				6CB4BE052C740CC00036293E /* ScreenBaseView.swift in Sources */,
 				6CB4BE082C740DE30036293E /* FetchRecipeScreenViewModel.swift in Sources */,
+				6CB4BE422C7791530036293E /* RecipeCollectionHorizontalViewModel.swift in Sources */,
 				6CB4BDF42C72DC600036293E /* Factory.swift in Sources */,
 				6CB4BDEA2C72D6DD0036293E /* APIProtocol.swift in Sources */,
 				6CB4BE1C2C75906A0036293E /* RecipeDetailView.swift in Sources */,
@@ -404,7 +486,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6CB4BE2D2C778CC60036293E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CB4BE4D2C7791FA0036293E /* HttpStatus.swift in Sources */,
+				6CB4BE4C2C7791F30036293E /* Factory.swift in Sources */,
+				6CB4BE3E2C7790D70036293E /* MealDBModels.swift in Sources */,
+				6CB4BE4A2C7791E00036293E /* NetworkError.swift in Sources */,
+				6CB4BE3C2C778F710036293E /* FetchRecipeScreenViewModel.swift in Sources */,
+				6CB4BE492C7791CD0036293E /* BaseUrl.swift in Sources */,
+				6CB4BE3F2C77911D0036293E /* FeaturedRecipeViewModel.swift in Sources */,
+				6CB4BE3D2C778F9D0036293E /* MealAPIService.swift in Sources */,
+				6CB4BE482C7791C60036293E /* HttpMethod.swift in Sources */,
+				6CB4BE452C7791980036293E /* MealDataAPI.swift in Sources */,
+				6CB4BE432C7791670036293E /* RecipeCollectionHorizontalViewModel.swift in Sources */,
+				6CB4BE442C7791880036293E /* RecipeDetailViewModel.swift in Sources */,
+				6CB4BE472C7791B80036293E /* RecipeDetailView.swift in Sources */,
+				6CB4BE342C778CC60036293E /* Fetch_iOS_SubmissionTests.swift in Sources */,
+				6CB4BE462C7791AB0036293E /* APIProtocol.swift in Sources */,
+				6CB4BE3B2C778F000036293E /* FetchRecipeScreenViewModelTests.swift in Sources */,
+				6CB4BE4B2C7791EA0036293E /* String+EXT.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CB4BE362C778CC60036293E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CB4BDC52C727E520036293E /* Fetch iOS Submission */;
+			targetProxy = 6CB4BE352C778CC60036293E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6CB4BDD32C727E530036293E /* Debug */ = {
@@ -534,6 +648,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = T.R.E.A.T.S;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -572,6 +687,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = T.R.E.A.T.S;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -597,6 +713,47 @@
 			};
 			name = Release;
 		};
+		6CB4BE382C778CC60036293E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3CN942FG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.ksj.Fetch-iOS-SubmissionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetch iOS Submission.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetch iOS Submission";
+			};
+			name = Debug;
+		};
+		6CB4BE392C778CC60036293E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB3CN942FG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.ksj.Fetch-iOS-SubmissionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetch iOS Submission.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetch iOS Submission";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -614,6 +771,15 @@
 			buildConfigurations = (
 				6CB4BDD62C727E530036293E /* Debug */,
 				6CB4BDD72C727E530036293E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CB4BE372C778CC60036293E /* Build configuration list for PBXNativeTarget "Fetch iOS SubmissionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CB4BE382C778CC60036293E /* Debug */,
+				6CB4BE392C778CC60036293E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

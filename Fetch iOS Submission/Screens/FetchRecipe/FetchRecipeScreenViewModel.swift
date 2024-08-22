@@ -46,18 +46,29 @@ final class FetchRecipeScreenViewModel: ObservableObject {
     }
     
     func setCategory(category: MealCategory) {
+        guard 
+            let strCategory = category.strCategory,
+            !strCategory.isEmpty
+        else { return }
         selectedCategory = category
         getMealForCategory(category)
+        updateCategories()
+
     }
     
     func updateCategories() {
-        let filtered = mealCatogries.filter({$0.id != selectedCategory.id})
+        guard let id = selectedCategory.id else { return }
+        let filtered = mealCatogries.filter({$0.id != id})
         mealCatogries = [selectedCategory] + filtered
     }
         
     func getDestinationViewFor(recipe: MealRecipe) -> RecipeDetailView {
         let vm = RecipeDetailViewModel(recipe: recipe, service: mealAPIService)
         return RecipeDetailView(viewModel: vm)
+    }
+    
+    func getRecipeTileCellViewModelFor(recipe: MealRecipe) -> RecipeTileCellViewModel {
+        return RecipeTileCellViewModel(recipe: recipe, mealServiceAPI: mealAPIService)
     }
     
     func getFeaturedRecipeViewModel() {
