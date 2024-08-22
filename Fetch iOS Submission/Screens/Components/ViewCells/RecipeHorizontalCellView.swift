@@ -38,7 +38,7 @@ struct RecipeHorizontalCellView: View {
                 }
             }
             .cornerRadius(12)
-            
+            .shadow(radius: 8)
             
             Text(recipe.strMeal ?? "")
                 .multilineTextAlignment(.center)
@@ -52,20 +52,5 @@ struct RecipeHorizontalCellView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    let meals = MealRecipe.DevData.getRandomRecipeCollection()
-    
-    return NavigationStack {
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach(meals) { meal in
-                    NavigationLink(
-                        destination: RecipeCellView(recipe: meal),
-                        label: {
-                            RecipeHorizontalCellView(recipe: meal)
-                        })
-                    
-                }
-            }
-        }
-    }
+    RecipeHorizontalCellView(recipe: MealRecipe.DevData.demoRecipe)
 }

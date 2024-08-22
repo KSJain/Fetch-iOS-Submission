@@ -11,29 +11,7 @@ struct ScreenBaseView: View {
     @ObservedObject var viewModel: ViewModelFactory
     
     var body: some View {
-        TabView {
-            NavigationStack {
-                Text("Look Up Recipe")
-            }
-            .tag("look_up_screen")
-            .tabItem {
-                Label("Lookup", systemImage: "magnifyingglass")
-            }
-            
-            FetchRecipeScreenView(viewModel: viewModel.getDashboardViewModel())
-            .tag("fetch_screen")
-            .tabItem {
-                Label("Fetch", systemImage: "dog")
-            }
-            
-            NavigationStack {
-                Text("User Profile")
-            }
-            .tag("favorites_screen")
-            .tabItem {
-                Label("Favorites", systemImage: "star")
-            }
-        }
+        FetchRecipeScreenView(viewModel: viewModel.getDashboardViewModel())
     }
 }
 

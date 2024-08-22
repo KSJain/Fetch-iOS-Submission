@@ -87,7 +87,7 @@ final class MealAPIService: MealAPIServiceProtocol {
 
 final class MockMealAPIService: MealAPIServiceProtocol {
     func getMealsByCategory(_ category: String) async throws -> MealResponse {
-        MealResponse(meals: MealRecipe.DevData.getRandomRecipeCollection())
+        MealResponse(meals: MealRecipe.DevData.getRecipeCollection())
     }
     
     func getMealsByArea(_ area: String) async throws -> MealResponse {
