@@ -35,10 +35,8 @@ struct FetchRecipeScreenView: View {
                         NavigationLink(
                             destination: viewModel.getDestinationViewFor(recipe: recipe),
                             label: {
-                                RecipeTileCellView(viewModel: viewModel.getRecipeTileCellViewModelFor(recipe: recipe))
-                                    .padding(.horizontal, 8)
-                            }
-                        )
+                                RecipeTileCellView(recipe: recipe)
+                                    .padding(.horizontal, 8)                            })
                     }
                 }
             }
@@ -49,7 +47,7 @@ struct FetchRecipeScreenView: View {
                                             .green.opacity(0.6),
                                             .green.opacity(0.9)
                                         ]),
-                    startPoint: .top, 
+                    startPoint: .top,
                     endPoint: .bottom
                 )
             )

@@ -7,6 +7,21 @@
 
 import SwiftUI
 
+final class RecipeCollectionHorizontalViewModel: ObservableObject {
+    private let service: MealAPIServiceProtocol
+    @Published var recipes: [MealRecipe]
+    
+    init(mealAPIService: MealAPIServiceProtocol, recipes: [MealRecipe]) {
+        self.service = mealAPIService
+        self.recipes = recipes
+    }
+    
+    @MainActor
+    func getRecipeDetailViewModel(recipe: MealRecipe) -> RecipeDetailViewModel {
+        RecipeDetailViewModel(recipe: recipe, service: service)
+    }
+}
+
 struct RecipeCollectionHorizontal: View {
     
     @ObservedObject var viewModel: RecipeCollectionHorizontalViewModel

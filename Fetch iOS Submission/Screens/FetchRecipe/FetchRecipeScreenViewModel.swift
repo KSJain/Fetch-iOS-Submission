@@ -66,10 +66,6 @@ final class FetchRecipeScreenViewModel: ObservableObject {
         return RecipeDetailView(viewModel: vm)
     }
     
-    func getRecipeTileCellViewModelFor(recipe: MealRecipe) -> RecipeTileCellViewModel {
-        return RecipeTileCellViewModel(recipe: recipe, mealServiceAPI: mealAPIService)
-    }
-    
     func getFeaturedRecipeViewModel() {
         featuredRecipeViewModel = FeaturedRecipeViewModel(mealAPIService: mealAPIService)
     }

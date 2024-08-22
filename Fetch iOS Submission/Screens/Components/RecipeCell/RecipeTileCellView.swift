@@ -8,48 +8,13 @@
 import SwiftUI
 import CachedAsyncImage
 
-@MainActor
-final class RecipeTileCellViewModel: ObservableObject {
-    let mealServiceAPI: MealAPIServiceProtocol
-    @Published var recipe: MealRecipe
-    @Published var areaText: String = ""
-    
-    init(recipe: MealRecipe, mealServiceAPI: MealAPIServiceProtocol) {
-        self.mealServiceAPI = mealServiceAPI
-        self.recipe = recipe
-        
-        getDetailedRecipe()
-    }
-    
-    func getDetailedRecipe(id: String = "") {
-        
-        var recipeId = ""
-        if !id.isEmpty {
-            recipeId = id
-        } else if let id = recipe.id {
-            recipeId = id
-        }
-        
-        Task {
-            if let meals = try await mealServiceAPI.getMealBy(id: recipeId).meals.first {
-                recipe = meals
-                
-                if let area = meals.strArea {
-                    areaText = area
-                }
-            }
-        }
-        
-    }
-}
-
 struct RecipeTileCellView: View {
-    @ObservedObject var viewModel: RecipeTileCellViewModel
+    let recipe: MealRecipe?
     
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             
-            CachedAsyncImage(url: viewModel.recipe.recipeThumbURL) { image in
+            CachedAsyncImage(url: recipe?.recipeThumbURL) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -64,23 +29,34 @@ struct RecipeTileCellView: View {
             .frame(width: 200)
             
             VStack(alignment: .leading) {
-                Text(viewModel.recipe.strMeal ?? "")
+                Text(recipe?.strMeal ?? "strMeal")
                     .multilineTextAlignment(.leading)
-                    .lineLimit(3)
-                    .font(.system(size: 28, weight: .medium, design: .monospaced))
-                    .minimumScaleFactor(0.7)
-
+                    .font(.system(size: 18, weight: .medium, design: .monospaced))
+                
                 Spacer()
-
-                VStack(alignment: .trailing) {
-                    Text(viewModel.areaText)
+                
+                
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(recipe?.strCategory ?? "strCategory")
+                        .fontWeight(.bold)
+                    HStack {
+                        Image(systemName: "location.square")
+                        Text(recipe?.strArea ?? "strArea")
+                    }
+                    
+                    if !(recipe?.strTags.isEmpty == false) {
+                        HStack {
+                            Image(systemName: "tag.square")
+                            Text(recipe?.strTags.joined(separator: " ") ?? "")
+                        }
+                    }
                 }
-                .padding(.bottom)
             }
             .padding(.vertical)
             .padding(.horizontal, 6)
             
             Spacer()
+
         }
         .frame(height: 200)
         .frame(maxWidth: .infinity)
@@ -91,19 +67,11 @@ struct RecipeTileCellView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    let viewModel = RecipeTileCellViewModel(
-        recipe: MealRecipe.DevData.demoRecipe,
-        mealServiceAPI: MockMealAPIService()
-    )
     
-    return RecipeTileCellView(viewModel: viewModel)
+    RecipeTileCellView(recipe: MealRecipe.DevData.demoRecipe)
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    let viewModel = RecipeTileCellViewModel(
-        recipe: MealRecipe.DevData.demoRecipeBadURL,
-        mealServiceAPI: MockMealAPIService()
-    )
     
-    return RecipeTileCellView(viewModel: viewModel)
+    RecipeTileCellView(recipe: MealRecipe.DevData.demoRecipeBadURL)
 }
